@@ -22,7 +22,7 @@ vars:
   
 tasks:
 
-  default:
+  preview:
   - task: snap
   - task: build
   - cd docs ; python -m http.server
@@ -31,7 +31,6 @@ tasks:
     - git add docs
     - git commit -m "$(date +%D-%T)" -a
     - git push origin main
-
 
   setup: {silent:true}
   origin:
