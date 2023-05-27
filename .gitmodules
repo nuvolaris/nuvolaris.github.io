@@ -1,0 +1,7 @@
+[submodule "0.2.0"]
+	path = 0.2.2
+	url = https://github.com/nuvolaris/nuvolaris-documentation
+[submodule "0.3.0"]
+	path = 0.3.0
+	url = https://github.com/nuvolaris/nuvolaris-documentation
+	branch = 0.3.0
