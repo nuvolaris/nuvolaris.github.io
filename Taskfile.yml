@@ -23,11 +23,11 @@ vars:
 tasks:
 
   preview:
-  - task: snap
   - task: build
   - cd docs ; python -m http.server
 
   publish:
+    - task: build
     - git add docs
     - git commit -m "$(date +%D-%T)" -a
     - git push origin main
@@ -40,6 +40,8 @@ tasks:
     - git checkout origin/main -B main
 
   snap:
+    ignore_error: true
+    cmds:
     - |
       cd "{{.CUR}}"
       git commit -m "$(date +%D-%T)" -a
@@ -49,4 +51,10 @@ tasks:
     desc: build the website
     ignore_error: true
     cmds:
+    - task: snap
+      vars: 
+        CUR: 0.2.2
+    - task: snap
+      vars: 
+        CUR: 0.3.0
     - antora --fetch --clean antora-playbook.yml

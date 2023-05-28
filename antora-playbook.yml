@@ -5,6 +5,8 @@ site:
 content:
   sources:
     - url: https://github.com/nuvolaris/nuvolaris-documentation
+      branches: 0.2.2
+    - url: https://github.com/nuvolaris/nuvolaris-documentation
       branches: 0.3.0
 
 ui: 

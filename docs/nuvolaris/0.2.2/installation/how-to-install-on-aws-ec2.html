@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Install on an AWS EC2 Instance :: Nuvolaris</title>
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../assets/css/site.css">
+    <script>var uiRootPath = '../../../assets'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Nuvolaris</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="nuvolaris" data-version="0.2.2">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Nuvolaris</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../index.html">Index</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#how-to-install-on-docker-desktop.adoc">Install on Docker Desktop</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#how-to-install-on-aws-ec2.adoc">Install on a single instance on AWS EC2 Instance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#how-to-install-on-hetzner-cloud.adoc">Install on a single instance on Hetzner Cloud</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#how-to-install-on-aws-eks.adoc">Install on an AWS EKS Cluster</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#how-to-install-on-ubuntu.adoc">Install on a generic Ubuntu Instance</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="#how-to-install-on-kubernetes.adoc">Install on a Kubernetes Cluster</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Nuvolaris</span>
+    <span class="version">0.2.2</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Nuvolaris</a>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../0.3.0/index.html">0.3.0 dev</a>
+        </li>
+        <li class="version is-current is-latest">
+          <a href="../index.html">0.2.2</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Nuvolaris</a></li>
+    <li><a href="how-to-install-on-aws-ec2.html">Install on an AWS EC2 Instance</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">0.2.2</button>
+  <div class="version-menu">
+    <a class="version is-missing" href="../../0.3.0/index.html">0.3.0 dev</a>
+    <a class="version is-current" href="how-to-install-on-aws-ec2.html">0.2.2</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.2.2/modules/ROOT/pages/installation/how-to-install-on-aws-ec2.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Install on an AWS EC2 Instance</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can install Nuvolaris on a single EC2 Instance.</p>
+</div>
+<div class="paragraph">
+<p>You need at least 4GB, 30GB disk space and 2 VCPU.</p>
+</div>
+<div class="paragraph">
+<p>As a prerequisite, you need to get access to the AWS Console by registering to Amazon Web Services.</p>
+</div>
+<div class="paragraph">
+<p>Once you got access to the console, use the following instructions to lauch a suitable virtual machine:</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_launch_the_ec2_virtual_machine"><a class="anchor" href="#_launch_the_ec2_virtual_machine"></a>Launch the EC2 Virtual Machine</h2>
+<div class="sectionbody">
+<div class="imageblock unresolved">
+<div class="content">
+<img src="how-to-install-on-aws-ec2/install_aws_ec2.png" alt="install aws ec2">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on the Services icon.</p>
+</li>
+<li>
+<p>Type <code>EC2</code> to find the EC2 service and click on the EC2 link.</p>
+</li>
+<li>
+<p>Find the <code>Launch Instance</code> pull down, open it and click on <code>Launch Instances</code>. Then fill the form that shows up as follows.</p>
+</li>
+<li>
+<p>Specify the name of the instance.</p>
+</li>
+<li>
+<p>Select Ubuntu as the Image type to launch.</p>
+</li>
+<li>
+<p>Select Ubuntu Server, at least 22.x or 20.x. We recommend you pick AMD64 as an architecture, for now.</p>
+</li>
+<li>
+<p>Select an instance with at least 4GB of memory and 2VCPU. Suggested choice is <code>t2.medium</code>. Larger VM types are ok, smaller are not.</p>
+</li>
+<li>
+<p>Specify the key pair you want to use. This step is required to be able to access the instance. If you do not have one, click on <code>Create new key pair</code> and follow instructions to create a new key pair and download the key file.</p>
+</li>
+<li>
+<p>Here you need to allow traffic for SSH, HTTP and HTTPS.</p>
+</li>
+<li>
+<p>Here you need  at least 30Gb of disk space.</p>
+</li>
+<li>
+<p>If you filled all the previous fields, you are ready and you can click here to Launch the instance.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once the instance is up and running, the following screen will pop up:</p>
+</div>
+<div class="imageblock unresolved">
+<div class="content">
+<img src="how-to-install-on-aws-ec2/install_aws_ec2_getip.png" alt="install aws ec2 getip">
+</div>
+</div>
+<div class="paragraph">
+<p>Follow the link, open the instance details, find out the `<public-dns-name>, and copy it.</public-dns-name></p>
+</div>
+<div class="paragraph">
+<p>Now you can access the instance using an SSH client. You need to use the <code>&lt;key-file&gt;</code> corresponding to the selected Key Pair name in step 8.</p>
+</div>
+<div class="paragraph">
+<p>You can access the virtual machine with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ssh -i &lt;key-file&gt; ubuntu@&lt;public-ipv4-dns&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_nuvolaris"><a class="anchor" href="#_install_nuvolaris"></a>Install Nuvolaris</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you are connected to the virtual machine with ssh, you can install Nuvolaris executing:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>curl -s https://www.nuvolaris.io/scripts/ubuntu-ec2.sh | sudo bash</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The script will take a while to install Kubernetes and Nuvolaris.</p>
+</div>
+<div class="paragraph">
+<p>If something goes wrong, please check the <a href="#troubleshooting.adoc" class="xref unresolved">troubleshooting</a> page.</p>
+</div>
+<div class="paragraph">
+<p>At the end it will show  a command like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv wskprops --apihost=&lt;apihost&gt; --auth=&lt;auth&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>&lt;apihost&gt;</code> is the DNS name of your virtual machine and <code>&lt;auth&gt;</code> is the authorization key.</p>
+</div>
+<div class="paragraph">
+<p>Take note of this command. You will need it to configure access to your serverless environemnt from anywhere using this command.</p>
+</div>
+<div class="paragraph">
+<p>You can then install the <code>nuv</code> command in your favorite client machine, <a href="https://github.com/nuvolaris/nuvolaris/releases">downloading</a> the correct version and use the command before to connect to your instance.</p>
+</div>
+<div class="paragraph">
+<p>Once the installation is completed, proceed reading <a href="https://openwhisk.apache.org/documentation.html">Apache OpenWhisk documentation</a>, remembering to use <code>nuv wsk</code> when you see <code>wsk</code>.</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../assets/js/site.js" data-ui-root-path="../../../assets"></script>
+<script async src="../../../assets/js/vendor/highlight.js"></script>
+  </body>
+</html>
