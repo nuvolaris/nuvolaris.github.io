@@ -58,7 +58,13 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Welcome</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../whats-new.html">What&#8217;s New in Nuvolaris 0.3.0</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -69,7 +75,7 @@
     <a class="nav-link" href="index.html">Installation</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="index-nuv.html">CLI</a>
+    <a class="nav-link" href="index-nuv.html">Download</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-config.html">Configure</a>
@@ -77,50 +83,44 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-update.html">Update</a>
   </li>
-</ul>
-  </li>
-  <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="local.html">Local</a>
-<ul class="nav-list">
   <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="local.html">Local Install</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="local-docker.html">Docker Desktop</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="server.html">Server</a>
+    <a class="nav-link" href="server.html">Server Install</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="server-sshkey.html">SSH Key</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="server-sshkey.html">Create SSH Key</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="server-generic.html">Generic</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="server-mk8s.html">Ubuntu MicroK8S</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="server-k3s.html">Rancher K3S</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="server-generic.html">Prepare Linux Server</a>
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="cluster.html">Kubernetes Cluster</a>
+    <a class="nav-link" href="cluster.html">Cluster Install</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="cluster-eks.html">Amazon EKS</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="cluster-eks.html">Install on Amazon EKS</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="cluster-aks.html">Azure AKS</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="cluster-aks.html">Install on Azure AKS</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="cluster-gke.html">Google GKE</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="cluster-gke.html">Install on Google GKE</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="cluster-osh.html">RedHat OpenShift</a>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="cluster-osh.html">Install on RedHat OpenShift</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -172,8 +172,9 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">Nuvolaris</a></li>
-    <li><a href="cluster.html">Kubernetes Cluster</a></li>
-    <li><a href="cluster-osh.html">RedHat OpenShift</a></li>
+    <li><a href="index.html">Installation</a></li>
+    <li><a href="cluster.html">Cluster Install</a></li>
+    <li><a href="cluster-osh.html">Install on RedHat OpenShift</a></li>
   </ul>
 </nav>
 <div class="page-versions">
@@ -197,10 +198,10 @@
 <div class="paragraph">
 <p>TODO</p>
 </div>
-<hr>
-<div class="paragraph">
-<p>oc login &lt;host&gt;
----</p>
+<div class="listingblock">
+<div class="content">
+<pre>oc login &lt;host&gt;</pre>
+</div>
 </div>
 </article>
   </div>
