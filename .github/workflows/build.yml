@@ -32,18 +32,18 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Pull & update submodules recursively
-      run: |
-        git submodule update --init --recursive
-        git submodule update --recursive --remote
+    # - name: Pull & update submodules recursively
+    #   run: |
+    #     git submodule update --init --recursive
+    #     git submodule update --recursive --remote
 
-    - name: Commit
-      run: |
-        git config user.email "actions@github.com"
-        git config user.name "GitHub Actions - update submodules"
-        git add --all
-        git commit -m "Update submodules" || echo "No changes to commit"
-        git push
+    # - name: Commit
+    #   run: |
+    #     git config user.email "actions@github.com"
+    #     git config user.name "GitHub Actions - update submodules"
+    #     git add --all
+    #     git commit -m "Update submodules" || echo "No changes to commit"
+    #     git push
 
     - name: Install Node.js
       uses: actions/setup-node@v2
@@ -51,10 +51,10 @@ jobs:
         node-version: '16'
         
     - name: Install Antora
-      run: npm i antora
+      run: npm i -g @antora/cli @antora/site-generator
 
     - name: Generate Site
-      run: npx antora --fetch --clean antora-playbook.yml
+      run: antora --fetch --clean antora-playbook.yml
 
     - name: Commit docs
       run: |
