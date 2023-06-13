@@ -61,7 +61,7 @@ jobs:
         git config user.email "actions@github.com"
         git config user.name "GitHub Actions - update docs folder"
         git add --all
-        git commit -m "update docs folder" || echo "No changes to commit"
+        git commit -m "generate site in docs folder" || echo "No changes to commit"
         git push      
 
     - name: Publish to GitHub Pages
