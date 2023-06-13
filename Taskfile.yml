@@ -24,7 +24,7 @@ tasks:
 
   preview:
   - task: build
-  - cd docs ; python -m http.server
+  - cd docs ; python3 -m http.server
 
   publish:
     - task: build
@@ -58,4 +58,4 @@ tasks:
     - task: snap
       vars: 
         CUR: 0.3.0
-    - antora --fetch --clean antora-playbook.yml
+    - npx antora --fetch --clean antora-playbook.yml
