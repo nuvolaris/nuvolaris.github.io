@@ -7,7 +7,6 @@
     <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/0.3.0/installation/cluster-eks.html">
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../assets/css/site.css">
-    <script>var uiRootPath = '../../../assets'</script>
   </head>
   <body class="article">
 <header class="header">
@@ -188,8 +187,8 @@
     <a class="version is-missing" href="../../0.2.2/index.html">0.2.2</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.3.0/modules/installation/pages/cluster-eks.adoc">Edit this Page</a></div>
-  </div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.3.0/modules/installation/pages/cluster-eks.adoc">Edit this Page</a></div>
+</div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
@@ -204,13 +203,19 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="_access"><a class="anchor" href="#_access"></a>Access</h2>
+<h2 id="_credentials"><a class="anchor" href="#_credentials"></a>Credentials</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.</p>
+<p>Before starting, access the AWS console and <a href="https://repost.aws/knowledge-center/create-access-key">create an access key and secret key</a>,
+giving the minimum required discussions as described [eksctl-permissions-]</p>
 </div>
 <div class="paragraph">
-<p>TODO provide more info</p>
+<p>Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>nuv config aws
+---</p>
 </div>
 </div>
 </div>
