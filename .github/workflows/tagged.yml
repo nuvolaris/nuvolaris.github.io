@@ -20,7 +20,7 @@ name: Docs Build
 on:
   push:
     tags:
-    - '[0-9]*'
+    - 'v*'
     branches-ignore:
     - '*'
     
@@ -33,37 +33,11 @@ jobs:
       with:
         submodules: recursive
 
-    # - name: Pull & update submodules recursively
-    #   run: |
-    #     git submodule update --init --recursive
-    #     git submodule update --recursive --remote
-
-    # - name: Commit
-    #   run: |
-    #     git config user.email "actions@github.com"
-    #     git config user.name "GitHub Actions - update submodules"
-    #     git add --all
-    #     git commit -m "Update submodules" || echo "No changes to commit"
-    #     git push
-
-    - name: Install Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '16'
-        
-    - name: Install Antora
-      run: npm i -g @antora/cli @antora/site-generator
-
     - name: Generate Site
-      run: antora --fetch --clean antora-playbook.yml
-
-    - name: Commit docs
       run: |
-        git config user.email "actions@github.com"
-        git config user.name "GitHub Actions - update docs folder"
-        git add --all
-        git commit -m "generate site in docs folder" || echo "No changes to commit"
-        git push      
+           rm -Rvf docs 
+           CUR_VER="$(curl https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)"
+           npx antora --fetch --attribute cur-ver="$CUR_VER" --clean antora-playbook.yml
 
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
