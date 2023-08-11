@@ -1,12 +1,14 @@
 site:
   title: Nuvolaris Community
   url: https://nuvolaris.github.io
-  start_page: ROOT::index.adoc
+  start_page: nuvolaris::index.adoc
 
 content:
   sources:
     - url: https://github.com/nuvolaris/nuvolaris-documentation
-      branches: 3.0
+      branches: 3.0.0
+    - url: https://github.com/nuvolaris/nuvolaris-documentation
+      branches: 0.2.2
 
 ui: 
   bundle:
@@ -15,4 +17,5 @@ ui:
   output_dir: assets
 
 output:
+  clean: true
   dir: ./docs
