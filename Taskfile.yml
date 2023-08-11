@@ -33,12 +33,7 @@ tasks:
     - git push origin main
 
   setup: {silent:true}
-  origin:
-    desc: update tags
-    cmds:
-    - git fetch --all
-    - git checkout origin/main -B main
-
+  
   snap:
     ignore_error: true
     cmds:
@@ -52,9 +47,6 @@ tasks:
     desc: build the website
     ignore_error: true
     cmds:
-    - task: snap
-      vars: 
-        CUR: 0.2.2
     - task: snap
       vars: 
         CUR: 0.3.0
