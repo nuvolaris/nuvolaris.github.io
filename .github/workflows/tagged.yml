@@ -23,6 +23,16 @@ on:
     - 'v*'
     branches-ignore:
     - '*'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
     
 jobs:
   build-doc:
@@ -30,16 +40,21 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-
     - name: Generate Site
       run: |
            rm -Rf docs 
            CUR_VER="$(curl https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)"
            echo CUR_VER=$CUR_VER
            npx antora --fetch --attribute cur-ver="$CUR_VER" --clean antora-playbook.yml
-
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v2
+      with:
+          path: 'docs'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         publish_dir: docs
