@@ -25,18 +25,17 @@ on:
     - '*'
     
 jobs:
-  build:
+  build-doc:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      with:
-        submodules: recursive
 
     - name: Generate Site
       run: |
-           rm -Rvf docs 
+           rm -Rf docs 
            CUR_VER="$(curl https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)"
+           echo CUR_VER=$CUR_VER
            npx antora --fetch --attribute cur-ver="$CUR_VER" --clean antora-playbook.yml
 
     - name: Publish to GitHub Pages
