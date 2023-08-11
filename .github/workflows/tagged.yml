@@ -15,7 +15,7 @@
 # specific language governing permissions and limitations
 # under the License.
 
-name: Docs Build
+name: Build Docs On Tag
 
 on:
   push:
@@ -26,6 +26,9 @@ on:
     
 jobs:
   build-doc:
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
