@@ -63,6 +63,6 @@ tasks:
       git tag -d $(git tag)
       git tag $TAG
       git commit -m $TAG -a
-      git push origin main --tags
+      git push origin main 
+      git push origin --tags
 
-    - 
