@@ -30,7 +30,7 @@ tasks:
     - task: build
     - git add docs
     - git commit -m "$(date +%D-%T)" -a
-    - git push origin main
+    - git push origin main:ghpages
 
   setup: {silent:true}
   
