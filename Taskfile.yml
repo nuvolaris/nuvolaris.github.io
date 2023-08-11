@@ -18,7 +18,7 @@
 version: '3'
 
 vars: 
-  CUR: '0.3.0'
+  CUR: '3.0'
   
 tasks:
 
@@ -48,6 +48,4 @@ tasks:
     ignore_error: true
     cmds:
     - task: snap
-      vars: 
-        CUR: 0.3.0
     - npx antora --fetch --clean antora-playbook.yml
