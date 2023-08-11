@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Amazon EKS :: Nuvolaris</title>
-    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/0.3.0/installation/cluster-eks.html">
+    <title>Installation :: Nuvolaris</title>
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../assets/css/site.css">
   </head>
@@ -48,12 +47,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="nuvolaris" data-version="0.3.0">
+<div class="nav-container" data-component="nuvolaris" data-version="3">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Nuvolaris</a></h3>
+    <h3 class="title"><a href="../index.html">Nuvolaris Community</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -62,7 +61,7 @@
     <a class="nav-link" href="../index.html">Welcome</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../whats-new.html">What&#8217;s New in Nuvolaris 0.3.0</a>
+    <a class="nav-link" href="../whats-new.html">What&#8217;s New in Nuvolaris 3</a>
   </li>
 </ul>
   </li>
@@ -70,7 +69,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Installation</a>
 <ul class="nav-list">
@@ -108,7 +107,7 @@
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="cluster.html">Cluster Install</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="3">
+  <li class="nav-item" data-depth="3">
     <a class="nav-link" href="cluster-eks.html">Install on Amazon EKS</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -149,16 +148,16 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Nuvolaris</span>
-    <span class="version">0.3.0</span>
+    <span class="version">3 beta</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Nuvolaris</a>
+      <a class="title" href="../../0.2.2/index.html">Nuvolaris</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../index.html">0.3.0</a>
+        <li class="version is-current">
+          <a href="../index.html">3 beta</a>
         </li>
-        <li class="version">
+        <li class="version is-latest">
           <a href="../../0.2.2/index.html">0.2.2</a>
         </li>
       </ul>
@@ -171,105 +170,52 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../index.html" class="home-link"></a>
+  <a href="../../0.2.2/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Nuvolaris</a></li>
+    <li><a href="../index.html">Nuvolaris Community</a></li>
     <li><a href="index.html">Installation</a></li>
-    <li><a href="cluster.html">Cluster Install</a></li>
-    <li><a href="cluster-eks.html">Install on Amazon EKS</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">0.3.0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">3 beta</button>
   <div class="version-menu">
-    <a class="version is-current" href="cluster-eks.html">0.3.0</a>
+    <a class="version is-current" href="index.html">3 beta</a>
     <a class="version is-missing" href="../../0.2.2/index.html">0.2.2</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.3.0/modules/installation/pages/cluster-eks.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.3.0/modules/installation/pages/index.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Amazon EKS</h1>
-<div id="preamble">
-<div class="sectionbody">
+<h1 class="page">Installation</h1>
 <div class="paragraph">
-<p>Creating an  EKS Cluster in Amazon AWS using <a href="index-nuv.html" class="xref page">nuv</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_credentials"><a class="anchor" href="#_credentials"></a>Credentials</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before starting, access the AWS console and <a href="https://repost.aws/knowledge-center/create-access-key">create an access key and secret key</a>,
-giving the minimum required discussions as described [eksctl-permissions-]</p>
+<p>Nuvolaris can be installed in many environments.</p>
 </div>
 <div class="paragraph">
-<p>Get the Amazon keys AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY, then configure access with:</p>
+<p>Nuvolaris includes powerful command line interface, <code>nuv</code> that manages everything, including installation.</p>
 </div>
-<hr>
 <div class="paragraph">
-<p>nuv config aws
----</p>
+<p>You can <a href="index-nuv.html" class="xref page">download</a> it and use to install the Nuvolaris Community on:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>in your <a href="local.html" class="xref page">Local Machine</a> using <a href="local-docker.html" class="xref page">Docker Desktop</a></p>
+</li>
+<li>
+<p>a <a href="server.html" class="xref page">Linux Server</a> accessible with <a href="server-sshkey.html" class="xref page">SSH</a></p>
+</li>
+<li>
+<p>a <a href="cluster.html" class="xref page">Kubernetes Cluster</a> accessible with its kubeconfig file.</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_config"><a class="anchor" href="#_config"></a>Config</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Configure to access a new or existing cluster:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config eks</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_create"><a class="anchor" href="#_create"></a>Create</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Create a new cluster if not existing.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config eks create</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_kubeconfig"><a class="anchor" href="#_kubeconfig"></a>Kubeconfig</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Extracting the kubeconfig from an existing cluster:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config eks create</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_delete"><a class="anchor" href="#_delete"></a>Delete</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can destroy an existing cluster:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config eks delete</pre>
-</div>
-</div>
-</div>
+<p>if you have issues, please consult the <a href="troubleshooting.html" class="xref page">troubleshooting</a> page.</p>
 </div>
 </article>
   </div>

@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Configuring Nuvolaris services :: Nuvolaris</title>
-    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/0.3.0/installation/index-config-services.html">
+    <title>Local Installation :: Nuvolaris</title>
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../assets/css/site.css">
   </head>
@@ -48,12 +47,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="nuvolaris" data-version="0.3.0">
+<div class="nav-container" data-component="nuvolaris" data-version="3">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Nuvolaris</a></h3>
+    <h3 class="title"><a href="../index.html">Nuvolaris Community</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -62,7 +61,7 @@
     <a class="nav-link" href="../index.html">Welcome</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../whats-new.html">What&#8217;s New in Nuvolaris 0.3.0</a>
+    <a class="nav-link" href="../whats-new.html">What&#8217;s New in Nuvolaris 3</a>
   </li>
 </ul>
   </li>
@@ -83,7 +82,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="index-update.html">Update</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="local.html">Local Install</a>
 <ul class="nav-list">
@@ -149,16 +148,16 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Nuvolaris</span>
-    <span class="version">0.3.0</span>
+    <span class="version">3 beta</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Nuvolaris</a>
+      <a class="title" href="../../0.2.2/index.html">Nuvolaris</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../index.html">0.3.0</a>
+        <li class="version is-current">
+          <a href="../index.html">3 beta</a>
         </li>
-        <li class="version">
+        <li class="version is-latest">
           <a href="../../0.2.2/index.html">0.2.2</a>
         </li>
       </ul>
@@ -171,120 +170,81 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../index.html" class="home-link"></a>
+  <a href="../../0.2.2/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Nuvolaris</a></li>
-    <li><a href="index-config-services.html">Configuring Nuvolaris services</a></li>
+    <li><a href="../index.html">Nuvolaris Community</a></li>
+    <li><a href="index.html">Installation</a></li>
+    <li><a href="local.html">Local Install</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">0.3.0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">3 beta</button>
   <div class="version-menu">
-    <a class="version is-current" href="index-config-services.html">0.3.0</a>
+    <a class="version is-current" href="local.html">3 beta</a>
     <a class="version is-missing" href="../../0.2.2/index.html">0.2.2</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.3.0/modules/installation/pages/index-config-services.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.3.0/modules/installation/pages/local.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Configuring Nuvolaris services</h1>
+<h1 class="page">Local Installation</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Syntax:</p>
+<p>This section describes how to install Nuvolaris on your local machine.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisite"><a class="anchor" href="#_prerequisite"></a>Prerequisite</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Before installing, you need to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>install <a href="local-docker.html" class="xref page">Docker Desktop</a>.</p>
+</li>
+<li>
+<p>install <a href="index-nuv.html" class="xref page">nuv</a>.</p>
+</li>
+<li>
+<p><a href="index-config.html" class="xref page">configure</a> the services you want</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
+<div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre>nuv config (enable|disable) [--all] [--redis] [--postgres] [--minio]</pre>
+<pre>nuv setup devcluster</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_all_services"><a class="anchor" href="#_all_services"></a>All Services</h2>
+<h2 id="_update"><a class="anchor" href="#_update"></a>Update</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Enable all services:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config enable --all</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Disable all services:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config disable --all</pre>
-</div>
+<p>After installation you can <a href="index-config.html" class="xref page">update</a> adding more services</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="redis"><a class="anchor" href="#redis"></a>REDIS</h2>
+<h2 id="_uninstall"><a class="anchor" href="#_uninstall"></a>Uninstall</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Enable REDIS:</p>
-</div>
 <div class="listingblock">
 <div class="content">
-<pre>nuv config enable --redis</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Disable REDIS:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config disable --redis</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="postgres"><a class="anchor" href="#postgres"></a>Postgres</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Enable all services:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config enable --postgres</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Disable all services:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config disable --postgres</pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="minio"><a class="anchor" href="#minio"></a>MinIO</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Enable minio:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config enable --minio</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Disable minio:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config disable --minio</pre>
+<pre>nuv setup devcluster --uninstall</pre>
 </div>
 </div>
 </div>

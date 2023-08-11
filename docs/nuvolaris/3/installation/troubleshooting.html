@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Configuring DNS and SSL :: Nuvolaris</title>
-    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/0.3.0/installation/index-config-ssldns.html">
+    <title>Troubleshooting :: Nuvolaris</title>
     <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../assets/css/site.css">
   </head>
@@ -48,12 +47,12 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="nuvolaris" data-version="0.3.0">
+<div class="nav-container" data-component="nuvolaris" data-version="3">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Nuvolaris</a></h3>
+    <h3 class="title"><a href="../index.html">Nuvolaris Community</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -62,7 +61,7 @@
     <a class="nav-link" href="../index.html">Welcome</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../whats-new.html">What&#8217;s New in Nuvolaris 0.3.0</a>
+    <a class="nav-link" href="../whats-new.html">What&#8217;s New in Nuvolaris 3</a>
   </li>
 </ul>
   </li>
@@ -122,7 +121,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
   </li>
 </ul>
@@ -149,16 +148,16 @@
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
     <span class="title">Nuvolaris</span>
-    <span class="version">0.3.0</span>
+    <span class="version">3 beta</span>
   </div>
   <ul class="components">
     <li class="component is-current">
-      <a class="title" href="../index.html">Nuvolaris</a>
+      <a class="title" href="../../0.2.2/index.html">Nuvolaris</a>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../index.html">0.3.0</a>
+        <li class="version is-current">
+          <a href="../index.html">3 beta</a>
         </li>
-        <li class="version">
+        <li class="version is-latest">
           <a href="../../0.2.2/index.html">0.2.2</a>
         </li>
       </ul>
@@ -171,64 +170,167 @@
 <main class="article">
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="../index.html" class="home-link"></a>
+  <a href="../../0.2.2/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Nuvolaris</a></li>
-    <li><a href="index-config-ssldns.html">Configuring DNS and SSL</a></li>
+    <li><a href="../index.html">Nuvolaris Community</a></li>
+    <li><a href="index.html">Installation</a></li>
+    <li><a href="troubleshooting.html">Troubleshooting</a></li>
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">0.3.0</button>
+  <button class="version-menu-toggle" title="Show other versions of page">3 beta</button>
   <div class="version-menu">
-    <a class="version is-current" href="index-config-ssldns.html">0.3.0</a>
+    <a class="version is-current" href="troubleshooting.html">3 beta</a>
     <a class="version is-missing" href="../../0.2.2/index.html">0.2.2</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.3.0/modules/installation/pages/index-config-ssldns.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/0.3.0/modules/installation/pages/troubleshooting.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Configuring DNS and SSL</h1>
-<div class="sect1">
-<h2 id="dns"><a class="anchor" href="#dns"></a>DNS</h2>
+<h1 class="page">Troubleshooting</h1>
+<div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Get the ip of the server with:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv TODO</pre>
-</div>
+<p>This document gives you hints for solving issues, using the (hidden) subcommand <code>debug</code>.</p>
 </div>
 <div class="paragraph">
-<p>configure a record to this IP in your dns server</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv config apihost &lt;server&gt;</pre>
-</div>
+<p>Note it is technical and assumes you have some knowledge of how Kubernetes operates.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="wildcard"><a class="anchor" href="#wildcard"></a>DNS Wildcard</h2>
+<h2 id="_watching"><a class="anchor" href="#_watching"></a>Watching</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Use a wildcard for statics <code>*</code></p>
+<p>While installing, you can watch the installation (opening another terminal) with the command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv debug watch</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Check no pod will go in error while deploying.</p>
+</div>
+<div class="paragraph">
+<p>You can watch continuosly the output of OpenWhisk actions with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv debug poll</pre>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ssl"><a class="anchor" href="#ssl"></a>SSL</h2>
+<h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>You can inspect the configuration:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>API host: <code>nuv debug apihost</code></p>
+</li>
+<li>
+<p>Static Configuration: <code>nuv debud crd</code>.</p>
+</li>
+<li>
+<p>Dynamic Configuration: <code>nuv debug config</code></p>
+</li>
+<li>
+<p>Runtimes: <code>nuv debug runtimes</code></p>
+</li>
+<li>
+<p>Load Balancer: <code>nuv debug lb</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_logs"><a class="anchor" href="#_logs"></a>Logs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can inspect logs of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>operator: <code>log:oper</code></p>
+</li>
+<li>
+<p>controller: <code>log:ctl</code></p>
+</li>
+<li>
+<p>invoker: <code>log:inv</code></p>
+</li>
+<li>
+<p>database: <code>log:db</code></p>
+</li>
+<li>
+<p>certificate manager <code>log:cert</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kubernetes"><a class="anchor" href="#_kubernetes"></a>Kubernetes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can detect which Kubernetes are you using with:</p>
+</div>
+<div class="paragraph">
+<p><code>nuv debug detect</code></p>
+</div>
+<div class="paragraph">
+<p>You can then inspect Kubernetes objects with:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>namespaces: <code>nuv debug k:ns</code></p>
+</li>
+<li>
+<p>nodes: <code>nuv debug k:no</code></p>
+</li>
+<li>
+<p>pod: <code>nuv debug k:po</code></p>
+</li>
+<li>
+<p>services: <code>nuv debug k:sv</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You can enter in a pod by name (use <code>k:po</code> to find the name) with:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>nuv config apihost &lt;server&gt; --tls=&lt;email&gt;</pre>
+<pre>nuv debug k:ex P=&lt;pod-name&gt;</pre>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_kubeconfig"><a class="anchor" href="#_kubeconfig"></a>Kubeconfig</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Usually <code>nuv</code> uses an hidden kubeconfig so does not override your kubernetes configuration.</p>
+</div>
+<div class="paragraph">
+<p>If you want to go more in depth and you are knowledegeable of Kubernetes,
+you can export the kubeconfig with <code>nuv debug export F=&lt;file&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>You can <strong>overwrite your kubeconfig</strong> (be aware of this) with <code>nuv debug export F=-</code>.</p>
 </div>
 </div>
 </div>
