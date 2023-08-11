@@ -59,7 +59,7 @@ tasks:
       var:
         CUR: 3.0.0
     - |
-      TAG="v{{.CUR}}.$(date +%y%m%d%H%M)"
+      TAG="v{{.CUR}}-beta.$(date +%y%m%d%H%M)"
       git tag -d $(git tag)
       git tag $TAG
       git commit -m $TAG -a
