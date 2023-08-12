@@ -22,19 +22,14 @@ vars:
   CUR: '3.0.0'
   
 tasks:
-
-  preview:
-  - task: build
-  - cd docs ; python3 -m http.server
-
-  publish:
-    - task: build
-    - git add docs
-    - git commit -m "$(date +%D-%T)" -a
-    - git push -f origin main:gh-pages
-
   setup: {silent:true}
-  
+ 
+  #publish:
+  #  - task: build
+  #  - git add docs
+  #  - git commit -m "$(date +%D-%T)" -a
+  #  - git push -f origin main:gh-pages
+ 
   snap:
     ignore_error: true
     cmds:
@@ -44,6 +39,11 @@ tasks:
       git commit -m "$(date +%D-%T)" -a
       git push origin "{{.CUR}}"
 
+  preview:
+  - task: build
+  - cd docs ; python3 -m http.server
+
+ 
   build:
     desc: build the website
     ignore_error: true
@@ -53,7 +53,7 @@ tasks:
         CUR: 3.0.0
     - npx antora --fetch --clean --attribute cur-ver="$(curl https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)" antora-playbook.yml
 
-  tag:
+  publish:
     desc: build the website on github
     cmds:
     - task: snap
