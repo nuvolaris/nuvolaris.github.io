@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Troubleshooting :: Nuvolaris Community</title>
-    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/installation/troubleshooting.html">
+    <title>Debug :: Nuvolaris Community</title>
+    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/installation/debug.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../assets/css/site.css">
   </head>
@@ -62,7 +62,10 @@
     <a class="nav-link" href="../index.html">Welcome</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../whats-new.html">What&#8217;s New in Nuvolaris Community 3</a>
+    <a class="nav-link" href="../about.html">About Nuvolaris</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../whats-new.html">Whats is New</a>
   </li>
 </ul>
   </li>
@@ -123,7 +126,10 @@
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
+    <a class="nav-link" href="debug.html">How to Debug</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq.html">FAQ</a>
   </li>
 </ul>
   </li>
@@ -132,14 +138,41 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../tutorial/index.html">Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/form-validation.html">Form Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/use-database.html">Use Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/send-email.html">Sending Email</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../development/index.html">Developer Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/deployment.html">Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/publishing.html">Publishing</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -176,28 +209,28 @@
   <ul>
     <li><a href="../index.html">Nuvolaris</a></li>
     <li><a href="index.html">Installation</a></li>
-    <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    <li><a href="debug.html">How to Debug</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">3 beta</button>
   <div class="version-menu">
-    <a class="version is-current" href="troubleshooting.html">3 beta</a>
+    <a class="version is-current" href="debug.html">3 beta</a>
     <a class="version is-missing" href="../../0.2.2/index.html">0.2.2 mvp</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/installation/pages/troubleshooting.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/installation/pages/debug.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Troubleshooting</h1>
+<h1 class="page">Debug</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This document gives you hints for solving issues, using the (hidden) subcommand <code>debug</code>.</p>
+<p>This document gives you hints for diagnosticing and solving issues, using the (hidden) subcommand <code>debug</code>.</p>
 </div>
 <div class="paragraph">
 <p>Note it is technical and assumes you have some knowledge of how Kubernetes operates.</p>
@@ -216,15 +249,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Check no pod will go in error while deploying.</p>
-</div>
-<div class="paragraph">
-<p>You can watch continuosly the output of OpenWhisk actions with:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>nuv debug poll</pre>
-</div>
+<p>Check that no pods will go in error while deploying.</p>
 </div>
 </div>
 </div>
@@ -232,7 +257,7 @@
 <h2 id="_configuration"><a class="anchor" href="#_configuration"></a>Configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can inspect the configuration:</p>
+<p>You can inspect the configuration with the <code>nuv debug subcommand</code></p>
 </div>
 <div class="ulist">
 <ul>
@@ -240,16 +265,19 @@
 <p>API host: <code>nuv debug apihost</code></p>
 </li>
 <li>
-<p>Static Configuration: <code>nuv debud crd</code>.</p>
+<p>Static Configuration: <code>nuv debug config</code>.</p>
 </li>
 <li>
-<p>Dynamic Configuration: <code>nuv debug config</code></p>
+<p>Current Status : <code>nuv debug status</code></p>
 </li>
 <li>
 <p>Runtimes: <code>nuv debug runtimes</code></p>
 </li>
 <li>
 <p>Load Balancer: <code>nuv debug lb</code></p>
+</li>
+<li>
+<p>Images: <code>nuv debug images</code></p>
 </li>
 </ul>
 </div>
@@ -259,24 +287,21 @@
 <h2 id="_logs"><a class="anchor" href="#_logs"></a>Logs</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can inspect logs of:</p>
+<p>You can inspect logs with <code>nuv debug log</code> subcommand. Logs you can show:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>operator: <code>log:oper</code></p>
+<p>operator: <code>nuv debug log operator</code> (continuosly: <code>nuv debug log foperator</code>)</p>
 </li>
 <li>
-<p>controller: <code>log:ctl</code></p>
+<p>controller: <code>nuv debug log controller</code> (continuosly: <code>nuv debug log fcontroller</code>)</p>
 </li>
 <li>
-<p>invoker: <code>log:inv</code></p>
+<p>database: <code>nuv debug log couchdb</code> (continuosly: <code>nuv debug log fcouchdb</code>)</p>
 </li>
 <li>
-<p>database: <code>log:db</code></p>
-</li>
-<li>
-<p>certificate manager <code>log:cert</code></p>
+<p>certificate manager: database: <code>nuv debug log certman</code> (continuosly: <code>nuv debug log fcertmap</code>)</p>
 </li>
 </ul>
 </div>
@@ -297,25 +322,28 @@
 <div class="ulist">
 <ul>
 <li>
-<p>namespaces: <code>nuv debug k:ns</code></p>
+<p>namespaces: <code>nuv debug kube ns</code></p>
 </li>
 <li>
-<p>nodes: <code>nuv debug k:no</code></p>
+<p>nodes: <code>nuv debug kube nodes</code></p>
 </li>
 <li>
-<p>pod: <code>nuv debug k:po</code></p>
+<p>pod: <code>nuv debug kube pod</code></p>
 </li>
 <li>
-<p>services: <code>nuv debug k:sv</code></p>
+<p>services: <code>nuv debug kube svc</code></p>
+</li>
+<li>
+<p>users: <code>nuv debug kube users</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>You can enter in a pod by name (use <code>k:po</code> to find the name) with:</p>
+<p>You can enter in a pod by name (use <code>kube pod</code> to find the name) with:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>nuv debug k:ex P=&lt;pod-name&gt;</pre>
+<pre>nuv debug kube exec P=&lt;pod-name&gt;</pre>
 </div>
 </div>
 </div>
@@ -331,7 +359,7 @@
 you can export the kubeconfig with <code>nuv debug export F=&lt;file&gt;</code>.</p>
 </div>
 <div class="paragraph">
-<p>You can <strong>overwrite your kubeconfig</strong> (be aware of this) with <code>nuv debug export F=-</code>.</p>
+<p>You can <strong>overwrite your kubeconfig</strong> (be aware there is no backup) with <code>nuv debug export F=-</code>.</p>
 </div>
 </div>
 </div>
