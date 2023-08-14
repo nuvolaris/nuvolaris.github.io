@@ -23,6 +23,8 @@ on:
     - 'v*'
     branches-ignore:
     - '*'
+
+  workflow_dispatch: 
     
 jobs:
   deploy:
