@@ -126,7 +126,10 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="troubleshooting.html">Troubleshooting</a>
+    <a class="nav-link" href="debug.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq.html">FAQ</a>
   </li>
 </ul>
   </li>
@@ -135,14 +138,41 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../tutorial/index.html">Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/form-validation.html">Form Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/use-database.html">Use Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/send-email.html">Sending Email</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
     <a class="nav-link" href="../development/index.html">Developer Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/deployment.html">Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/publishing.html">Publishing</a>
+  </li>
+</ul>
   </li>
 </ul>
   </li>
@@ -197,13 +227,10 @@
 <article class="doc">
 <h1 class="page">Installation</h1>
 <div class="paragraph">
-<p>Nuvolaris can be installed in many environments.</p>
+<p>Nuvolaris can be installed in many environments, using our powerful  command line interface, that can be downladed and installed <a href="index-nuv.html" class="xref page">from this page</a>.</p>
 </div>
 <div class="paragraph">
-<p>Nuvolaris includes powerful command line interface, <code>nuv</code> that manages everything, including installation.</p>
-</div>
-<div class="paragraph">
-<p>You can <a href="index-nuv.html" class="xref page">download</a> it and use to install the Nuvolaris Community on:</p>
+<p>For development purposes, you can install a single node version:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -211,15 +238,47 @@
 <p>in your <a href="local.html" class="xref page">Local Machine</a> using <a href="local-docker.html" class="xref page">Docker Desktop</a></p>
 </li>
 <li>
-<p>a <a href="server.html" class="xref page">Linux Server</a> accessible with <a href="server-sshkey.html" class="xref page">SSH</a></p>
-</li>
-<li>
-<p>a <a href="cluster.html" class="xref page">Kubernetes Cluster</a> accessible with its kubeconfig file.</p>
+<p>in a <a href="server.html" class="xref page">Linux Server</a>  supported by <a href="https://docs.k3s.io/installation/requirements">K3S</a></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>if you have issues, please consult the <a href="troubleshooting.html" class="xref page">troubleshooting</a> page.</p>
+<p>For production purposes, you can install Nuvolaris in any <a href="cluster-generic.html" class="xref page">Kubernetes Cluster</a> accessible with its kubeconfig file that satifies  <a href="cluster-requirements.html" class="xref page">some requirements</a>.</p>
+</div>
+<div class="paragraph">
+<p>We provide support for installing a  Kubernetes cluster ready for Nuvolaris in the following cloud environments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="cluster-eks.html" class="xref page">EKS in Amazon AWS</a></p>
+</li>
+<li>
+<p><a href="cluster-aks.html" class="xref page">AKS in Microsoft Azure</a></p>
+</li>
+<li>
+<p><a href="cluster-gke.html" class="xref page">GKE in Google Cloud</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We also provide support for installing Nuvolaris also on the following  cloud-independent flavors of Kubernetes running either in cloud or on premises.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="cluster-osh.html" class="xref page">RedHat OpenShift</a></p>
+</li>
+<li>
+<p><a href="server-mk8s.html" class="xref page">Ubuntu MicroK8S</a></p>
+</li>
+<li>
+<p><a href="server-k3s.html" class="xref page">SuSE K3S</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>If you have issues, please consult the <a href="faq.html" class="xref page">FAQ</a> and the <a href="debug.html" class="xref page">troubleshooting</a> page.</p>
 </div>
 </article>
   </div>
