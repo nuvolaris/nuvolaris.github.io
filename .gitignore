@@ -1,6 +1,7 @@
 TODO.md
 .vscode/
 .git-hooks/
+.task/
 antora/
 node_modules
 package.json

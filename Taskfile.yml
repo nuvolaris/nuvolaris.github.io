@@ -43,7 +43,6 @@ tasks:
   - task: build
   - cd docs ; python3 -m http.server
 
- 
   build:
     desc: build the website
     ignore_error: true
@@ -52,6 +51,8 @@ tasks:
       vars:
         CUR: 3.0.0
     - npx antora --fetch --clean --attribute cur-ver="$(curl https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)" antora-playbook.yml
+    sources:
+    - 3.0.0/**/*.adoc
 
   publish:
     desc: build the website on github
