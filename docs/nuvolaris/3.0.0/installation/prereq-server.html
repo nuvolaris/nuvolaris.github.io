@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Installation Overview :: Nuvolaris Community</title>
-    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/installation/index.html">
+    <title>Untitled :: Nuvolaris Community</title>
+    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/installation/prereq-server.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../assets/css/site.css">
   </head>
@@ -73,7 +73,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Installation</a>
 <ul class="nav-list">
@@ -90,7 +90,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="prereq-docker.html">Local Docker</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="prereq-server.html">Linux Server</a>
 <ul class="nav-list">
@@ -239,66 +239,101 @@
   <ul>
     <li><a href="../index.html">Nuvolaris</a></li>
     <li><a href="index.html">Installation</a></li>
+    <li><a href="prereq.html">Prerequisites</a></li>
+    <li><a href="prereq-server.html">Linux Server</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">3 beta</button>
   <div class="version-menu">
-    <a class="version is-current" href="index.html">3 beta</a>
+    <a class="version is-current" href="prereq-server.html">3 beta</a>
     <a class="version is-missing" href="../../0.2.2/index.html">0.2.2 mvp</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/installation/pages/index.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/installation/pages/prereq-server.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Installation Overview</h1>
+<div class="sect1">
+<h2 id="_installing_public_ssh_key"><a class="anchor" href="#_installing_public_ssh_key"></a>Installing Public SSH key</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>If you are in a hurry and you don&#8217;t want to read everything, read our <a href="quickstart.html" class="xref page">quick start</a> installation guide. Otherwise read on, or come back if something does not work.</p>
+<p>Once you got your <code>id_rsa.pub</code> and a server, get access to it.</p>
 </div>
 <div class="paragraph">
-<p>Nuvolaris can be installed in many environments, using our powerful  command line interface <code>nuv</code>. You can downloded the installer <a href="download.html" class="xref page">from this page</a>.</p>
+<p>The exact instructions depends on the specific provider.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generic_instructions"><a class="anchor" href="#_generic_instructions"></a>Generic instructions.</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Once you installed <code>nuv</code>, before installing you need to:</p>
+<p>The generic instructions are the following:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="prereq.html" class="xref page">checking the prerequisites</a> for the installation, and satisfy them</p>
+<p>Usually you will be given an IP address and a password.</p>
 </li>
 <li>
-<p><a href="configure.html" class="xref page">configure</a> your Nuvolaris installation.</p>
+<p>Using those informations you will be able to enter in the server, edit the file <code>~/.ssh/authorized_keys</code> and  add your <code>id_rsa.pub</code></p>
+</li>
+<li>
+<p>if you are using a non-root user, ensure this user has the right to use <code>sudo</code> to run commands as a root without a password.</p>
+</li>
+<li>
+<p>ti give sudo rights to a non-root user, usually you need to use the root password, then edit the file /etc/sudoers and add the line:</p>
 </li>
 </ul>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;user&gt; ALL=(ALL) NOPASSWD:ALL</pre>
+</div>
+</div>
 <div class="paragraph">
-<p>Finally, once you have the prerequisites satisfied and your installation configured ,  you can actually install:</p>
+<p>(change <code>&lt;user&gt;</code> with your actual user).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_generate_an_ssh_key"><a class="anchor" href="#_generate_an_ssh_key"></a>Generate an SSH key</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To connect to a server you need a couple of file called <strong>ssh keys</strong></p>
+</div>
+<div class="paragraph">
+<p>You can generate them on command line using</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ssh-keygen</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It will create a couple of files, typically called:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>in your <a href="install-local.html" class="xref page">local machine</a></p>
+<p>~/.ssh/id_rsa</p>
 </li>
 <li>
-<p>in a <a href="install-server.html" class="xref page">Linux server</a></p>
-</li>
-<li>
-<p>in a <a href="install-cluster.html" class="xref page">Kubernetes cluster</a>.</p>
+<p>~/.ssh/id_rsa.pub</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>After the installation, you can change the configuration then <a href="update.html" class="xref page">update the system</a>.</p>
+<p>You have to keep secret the <code>id_rsa</code> file, while you can copy the <code>id_rsa.pub</code> file and install in the server to access it.</p>
 </div>
 <div class="paragraph">
-<p>If you have issues, please consult the <a href="faq.html" class="xref page">FAQ</a> and the <a href="debug.html" class="xref page">troubleshooting</a> page.</p>
+<p>See <a href="#server-generic.adoc" class="xref unresolved">here</a> for informations how to install it in a server.</p>
 </div>
-<div class="paragraph">
-<p>You can also discuss with us in our <a href="http://nuvolaris.discourse.group">online forum</a>.</p>
+</div>
 </div>
 </article>
   </div>

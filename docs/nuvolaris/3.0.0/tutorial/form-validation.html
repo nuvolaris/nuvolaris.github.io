@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Tutorial :: Nuvolaris Community</title>
-    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/tutorial/index.html">
+    <title>Untitled :: Nuvolaris Community</title>
+    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/tutorial/form-validation.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../assets/css/site.css">
   </head>
@@ -167,14 +167,14 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Tutorial</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="getting-started.html">Getting Started</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="form-validation.html">Form Validation</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -239,46 +239,142 @@
   <ul>
     <li><a href="../index.html">Nuvolaris</a></li>
     <li><a href="index.html">Tutorial</a></li>
+    <li><a href="form-validation.html">Form Validation</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">3 beta</button>
   <div class="version-menu">
-    <a class="version is-current" href="index.html">3 beta</a>
+    <a class="version is-current" href="form-validation.html">3 beta</a>
     <a class="version is-missing" href="../../0.2.2/index.html">0.2.2 mvp</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/tutorial/pages/index.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/tutorial/pages/form-validation.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Tutorial</h1>
+<div class="sect1">
+<h2 id="_form_validation_and_submission"><a class="anchor" href="#_form_validation_and_submission"></a>Form Validation and Submission</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This tutorial walks you through developing a simple Nuvolaris application
-using the Command Line Interface (CLI) and Javascript (but any supported language will do).</p>
+<p>Now that we have a contact form, we have to handle the submission. We can do that by adding a new action that will be called when the form is submitted. Let&#8217;s create a <code>submit.js</code> file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">function main(args) {
+  let message = []
+  let errors = []
+  // TODO: Form Validation
+  // TODO: Returning the Result
+}</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Its purpose is to showcase serverless development in action by creating a contact form for a website.
-We will see the development process from start to finish, including the deploying of the platform and running the application.</p>
+<p>This action is a bit more complex. It takes the input object (called args) which will contain the form data (accessible via <code>args.name</code>, <code>args.email</code>, etc.). With that we will do some validation and then return the result.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="getting-started.html" class="xref page">Getting Started</a></p>
-</li>
-<li>
-<p><a href="form-validation.html" class="xref page">Form Validation</a></p>
-</li>
-<li>
-<p><a href="use-database.html" class="xref page">Use Database</a></p>
-</li>
-<li>
-<p><a href="send-email.html" class="xref page">Sending Email</a></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="_form_validation"><a class="anchor" href="#_form_validation"></a>Form Validation</h3>
+<div class="paragraph">
+<p>Let&#8217;s start filling the "Form Validation" part by checking the name:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// validate the name
+if(args.name) {
+ message.push("name: "+args.name)
+} else {
+ errors.push("No name provided")
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then the email by using a regular expression:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// validate the email
+var re = /\S+@\S+\.\S+/;
+if(args.email &amp;&amp; re.test(args.email)) {
+   message.push("email: "+args.email)
+} else {
+  errors.push("Email missing or incorrect.")
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The phone, by checking that it&#8217;s at least 10 digits:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// validate the phone
+if(args.phone &amp;&amp; args.phone.match(/\d/g).length &gt;= 10) {
+  message.push("phone: "+args.phone)
+} else {
+  errors.push("Phone number missing or incorrect.")
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finally the message text, if present:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">// validate the message
+if(args.message) {
+  message.push("message:" +args.message)
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_validation_done_return_the_result"><a class="anchor" href="#_validation_done_return_the_result"></a>Validation Done, Return the Result</h3>
+<div class="paragraph">
+<p>With the validation phase, we added to the "errors" array all the errors we found, and to the "message" array all the data we want to show to the user. So if there are errors, we have to show them, otherwise we store the message and return a "thank you" page.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-javascript hljs" data-lang="javascript">if(errors.length) {
+  var errs = "&lt;ul&gt;&lt;li&gt;"+errors.join("&lt;/li&gt;&lt;li&gt;")+"&lt;/li&gt;&lt;/ul&gt;"
+  return {
+    body: "&lt;h1&gt;Errors!&lt;/h1&gt;"+
+      data + errs +
+      '&lt;br&gt;&lt;a href="javascript:window.history.back()"&gt;Back&lt;/a&gt;'
+   }
+} else {
+   var data = "&lt;pre&gt;"+message.join("\n")+"&lt;/pre&gt;"
+   // storing in the database
+   // TODO: &lt;Store the message in the database&gt;
+   return {
+     body: "&lt;h1&gt;Thank you!&lt;/h1&gt;"+ data
+   }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The code is not yet complete, but let&#8217;s start deploying it:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">nuv -wsk action create contact/submit submit.js --web true
+ok: created action contact/submit</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now if you go to the contact form page and submit it correctly, you should see the "Thank you" page.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="_images/submit.png" alt="Submit Result">
+</div>
+</div>
+<div class="paragraph">
+<p>Almost like magic, the submit action is automatically triggered by the form submit button with the right data.</p>
+</div>
+</div>
+</div>
 </div>
 </article>
   </div>

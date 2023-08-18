@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quick Start :: Nuvolaris Community</title>
+    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/installation/quickstart.html">
+    <meta name="generator" content="Antora 3.1.3">
+    <link rel="stylesheet" href="../../../assets/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://nuvolaris.github.io">Nuvolaris Community</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="nuvolaris" data-version="3.0.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Nuvolaris</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../index.html">Welcome</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../about.html">About Nuvolaris</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../whats-new.html">Whats is New</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">Installation</a>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="quickstart.html">Quick Start</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="download.html">Download Installer</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="prereq.html">Prerequisites</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="prereq-docker.html">Local Docker</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="prereq-server.html">Linux Server</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="prereq-k3s.html">K3S</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="prereq-mk8s.html">MicroK8S</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="prereq-kubernetes.html">Kubernetes Cluster</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="prereq-eks.html">Amazon EKS</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="prereq-aks.html">Azure AKS</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="prereq-gke.html">Google GKE</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="prereq-osh.html">RedHat OpenShift</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="configure.html">Configure Nuvolaris</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configure-dns.html">DNS</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configure-ssl.html">SSL</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="configure-services.html">Services</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="install.html">Install Nuvolaris</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="install-local.html">Local Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="install-server.html">Server Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="install-cluster.html">Cluster Installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="update.html">Update Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="debug.html">Troubleshooting</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="faq.html">FAQ</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../tutorial/index.html">Tutorial</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/getting-started.html">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/form-validation.html">Form Validation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/use-database.html">Use Database</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tutorial/send-email.html">Sending Email</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../development/index.html">Developer Guide</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/overview.html">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/deployment.html">Deployment</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../development/publishing.html">Publishing</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Nuvolaris</span>
+    <span class="version">3 beta</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Nuvolaris</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">3 beta</a>
+        </li>
+        <li class="version">
+          <a href="../../0.2.2/index.html">0.2.2 mvp</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Nuvolaris</a></li>
+    <li><a href="index.html">Installation</a></li>
+    <li><a href="quickstart.html">Quick Start</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="version-menu-toggle" title="Show other versions of page">3 beta</button>
+  <div class="version-menu">
+    <a class="version is-current" href="quickstart.html">3 beta</a>
+    <a class="version is-missing" href="../../0.2.2/index.html">0.2.2 mvp</a>
+  </div>
+</div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/installation/pages/quickstart.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Quick Start</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a TL;DR (too long, don&#8217;t read)  guide to the installation process, aimed to experienced people in a hurry, that gives you a high level overview of the installation process, omitting a lot of details, that are covered in the rest of the documentation.</p>
+</div>
+<div class="paragraph">
+<p>Of course, it this guide is not enough and things fails, you can always apply the rule: "if everything fails, read the manual", as it is there, even if you don&#8217;t want to read it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>Prerequisites</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>First, <a href="download.html" class="xref page">download <code>nuv</code></a>, the Nuvolaris CLI, the version suitable for your environment. We support the 64 bit version of recent Windows, MacOS and major Linux distributions.</p>
+</div>
+<div class="paragraph">
+<p>Second, configure the services you want to enable. By defalt Nuvolaris will install only the serverless engine with no services enabled. If you want to enable all of them, use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv config enable --all</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>otherwise pick the services you want, among <code>--redis</code>, <code>--mongodb</code>, <code>--minio</code>, <code>--cron</code>, <code>--postgres</code>. Note that <code>--mongodb</code> is actually <a href="https://www.ferretdb.io">FerretDB</a> and requires Postgres that is implicitly also enabled. More details <a href="configure.html" class="xref page">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>Now, choose where to install Nuvolaris.</p>
+</div>
+<div class="paragraph">
+<p>Your options are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#locally">locally</a> in your workstation;</p>
+</li>
+<li>
+<p>in a Linux <a href="#server">server</a> in your intranet</p>
+</li>
+<li>
+<p>in a Linux <a href="#internet-server">server</a> available on Internet</p>
+</li>
+<li>
+<p>in a Kubernets <a href="#cluster">cluster</a> in your intranet</p>
+</li>
+<li>
+<p>in <a href="#cloud-cluster">cloud</a>, where you can provision a Kubernetes cluster</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="locally"><a class="anchor" href="#locally"></a>Local Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have a <strong>decent</strong> workstation (with at least 16GB of memory) running a  <strong>recent</strong>  and <strong>64 bit</strong> operating system, you can install
+<a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> and then install Nuvolaris in it.</p>
+</div>
+<div class="paragraph">
+<p>Once you have:
+. installed the CLI a
+. configured you services
+. installed Docker Desktop</p>
+</div>
+<div class="paragraph">
+<p>you can install Nuvolaris and its services in Docker with just:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv setup devcluster</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Once it is installed, you can proceed to read the <a href="../tutorial/index.html" class="xref page">tutorial</a> to learn how to code with it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="internet-server"><a class="anchor" href="#internet-server"></a>Internet Server Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have access to server on Internet, you will get an IP address to reach it.</p>
+</div>
+<div class="paragraph">
+<p>Many cloud providers also gives you a DNS name, usually  very hard to remember such as <code>ec2-12-34-56-78.us-west-2.compute.amazonaws.com</code>. Nonetheless you are advised to use it as it is  than just the IP addres and should be used to refer to your server.</p>
+</div>
+<div class="paragraph">
+<p>However, you can access the server directly with the IP without configuring any DNS names. If you do so, you cannot configure <code>https</code> so you will access to it insecurely just using http and everything on the wire, including access keys, are unencrypted.</p>
+</div>
+<div class="paragraph">
+<p>If you are comfortable with this <strong>insecure</strong> setup, skip to the <a href="#server">server</a> installation section. Otherwise, you do better to setup a DNS name and enable <code>https</code> protocol provisioning a certificate.</p>
+</div>
+<div class="paragraph">
+<p>So, once you got the IP address of your server, either use the assigned DNS name of your provider, or give to it a DNS name <a href="https://en.wikipedia.org/wiki/List_of_managed_DNS_providers">using a domain name provider</a>. We cannot give here precise instructions as there are many DNS provider and each has different rules to do the setup. Check with your choosen domain name provider.</p>
+</div>
+<div class="paragraph">
+<p>Once you got a name in the DNS for your server, let&#8217;s say <code>&lt;dns-name&gt;</code> you can configure it and enable SSL</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Replace the <code>&lt;dns-name&gt;</code> with the actual DNS name, without using prefixes like <code>http://</code> or suffixes like <code>:443</code>. Also replace <code>&lt;email-address&gt;</code> with your actual email address.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Use  the following command to give a DNS name to your server and enable SSL:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv config apihost &lt;dns-name&gt; --tls=&lt;email-address&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="server"><a class="anchor" href="#server"></a>Server Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have access to a Linux server, with:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>an IP address or DNS name, referred as <code>&lt;server&gt;</code></p>
+</li>
+<li>
+<p>passwordless access with <code>ssh</code> to a Linux user <code>&lt;user&gt;</code></p>
+</li>
+<li>
+<p>at least 8GB of memory and 50GB of disk space available</p>
+</li>
+<li>
+<p>the user <code>&lt;user&gt;</code> has passwordless <code>sudo</code> rights</p>
+</li>
+<li>
+<p>the firewall that allows traffic to the ports 80, 443 and 6443</p>
+</li>
+<li>
+<p><strong>without</strong> any Docker or Kubernetes installed</p>
+</li>
+<li>
+<p><strong>without</strong> any Web server or Web application installed</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>then you can install Nuvolaris in it.</p>
+</div>
+<div class="paragraph">
+<p>The server can be physical or virtual. We need Kubernetes in it but the installer takes care of installing also a flavor of Kubernetes, <a href="https://k3s.io">K3S</a>, courtesy of <a href="https://github.com/alexellis/k3sup">K3Sup</a>.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Replace in the following command <code>&lt;server&gt;</code>  with the address of your server, and <code>&lt;user&gt;</code> with the actual user to use in your server. The <code>&lt;server&gt;</code> can be the same and  <code>&lt;dns-name&gt;</code> you have configured in the previous paragraph, if you did it.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To install Nuvolaris, first check you have access to the server with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>ssh &lt;user&gt;@&lt;server&gt; sudo hostname</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You shold see no errors and read the internal hostname of your server.</p>
+</div>
+<div class="paragraph">
+<p>If you do not receive errors, you can proceed install Nuvolaris with this command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv setup server &lt;server&gt; &lt;user&gt;</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cloud-cluster"><a class="anchor" href="#cloud-cluster"></a>Cloud Cluster Provisioning</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have access to a cloud provider, you can setup a Kubernetes cluster in it. The kubernetes cluster needs to satisfy certain <a href="#prereq-cluster">prerequisites</a> to be able to install Nuvolaris with no issues.</p>
+</div>
+<div class="paragraph">
+<p>We provide the following commands to easily configure and install a compliant Kubernetes clusters for the major cloud providers. At the end of the installation you will hava available and accessible a Kubernetes Cluster able to install Nuvolaris.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon AWS:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv config eks
+nuv cloud eks create</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Azure AKS:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv config aks
+nuv cloud aks create</pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Google GKE:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv config gke
+nuv cloud gke create</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cluster"><a class="anchor" href="#cluster"></a>Cluster Install</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you have access to a Kubernetes cluster with <code>cluster-admin</code> role you can install Nuvolaris in it. You can get this access either provisioning a Kubernetes cluster in <a href="#cloud">cloud</a> or getting access to it from your system administrator.</p>
+</div>
+<div class="paragraph">
+<p>Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file names <code>.kube/config</code> in your home directory.</p>
+</div>
+<div class="paragraph">
+<p>If the cluster satifies the <a href="prereq-cluster.html" class="xref page">prerequisites</a>, you can install Nuvolaris in it.</p>
+</div>
+<div class="paragraph">
+<p>First, check you have actually access to a Kubernetes cluster, performing this command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>nuv debug kube info</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You should get something like this:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Kubernetes control plane is running at <a href="https://api.nuvolaris.osh.n9s.cc:6443" class="bare">https://api.nuvolaris.osh.n9s.cc:6443</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../../assets/js/site.js" data-ui-root-path="../../../assets"></script>
+<script async src="../../../assets/js/vendor/highlight.js"></script>
+  </body>
+</html>

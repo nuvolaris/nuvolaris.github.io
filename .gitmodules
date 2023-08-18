@@ -8,3 +8,6 @@
 [submodule "training"]
 	path = training
 	url = git@github.com:nuvolaris/nuvolaris-training
+[submodule "nuvolaris-documentation-ui"]
+	path = nuvolaris-documentation-ui
+	url = git@github.com:nuvolaris/nuvolaris-documentation-ui

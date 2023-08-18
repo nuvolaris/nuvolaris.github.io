@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Installation Overview :: Nuvolaris Community</title>
-    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/installation/index.html">
+    <title>Configuring Nuvolaris services :: Nuvolaris Community</title>
+    <link rel="canonical" href="https://nuvolaris.github.io/nuvolaris/3.0.0/installation/configure-ssl.html">
     <meta name="generator" content="Antora 3.1.3">
     <link rel="stylesheet" href="../../../assets/css/site.css">
   </head>
@@ -73,7 +73,7 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="index.html">Installation</a>
 <ul class="nav-list">
@@ -129,7 +129,7 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="configure-dns.html">DNS</a>
   </li>
-  <li class="nav-item" data-depth="3">
+  <li class="nav-item is-current-page" data-depth="3">
     <a class="nav-link" href="configure-ssl.html">SSL</a>
   </li>
   <li class="nav-item" data-depth="3">
@@ -239,66 +239,34 @@
   <ul>
     <li><a href="../index.html">Nuvolaris</a></li>
     <li><a href="index.html">Installation</a></li>
+    <li><a href="configure.html">Configure Nuvolaris</a></li>
+    <li><a href="configure-ssl.html">SSL</a></li>
   </ul>
 </nav>
 <div class="page-versions">
   <button class="version-menu-toggle" title="Show other versions of page">3 beta</button>
   <div class="version-menu">
-    <a class="version is-current" href="index.html">3 beta</a>
+    <a class="version is-current" href="configure-ssl.html">3 beta</a>
     <a class="version is-missing" href="../../0.2.2/index.html">0.2.2 mvp</a>
   </div>
 </div>
-<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/installation/pages/index.adoc">Edit this Page</a></div>
+<div class="edit-this-page"><a href="https://github.com/nuvolaris/nuvolaris-documentation/edit/3.0.0/modules/installation/pages/configure-ssl.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-<h1 class="page">Installation Overview</h1>
-<div class="paragraph">
-<p>If you are in a hurry and you don&#8217;t want to read everything, read our <a href="quickstart.html" class="xref page">quick start</a> installation guide. Otherwise read on, or come back if something does not work.</p>
+<h1 class="page">Configuring Nuvolaris services</h1>
+<div class="sect1">
+<h2 id="ssl"><a class="anchor" href="#ssl"></a>SSL</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>nuv config apihost &lt;server&gt; --tls=&lt;email&gt;</pre>
 </div>
-<div class="paragraph">
-<p>Nuvolaris can be installed in many environments, using our powerful  command line interface <code>nuv</code>. You can downloded the installer <a href="download.html" class="xref page">from this page</a>.</p>
 </div>
-<div class="paragraph">
-<p>Once you installed <code>nuv</code>, before installing you need to:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="prereq.html" class="xref page">checking the prerequisites</a> for the installation, and satisfy them</p>
-</li>
-<li>
-<p><a href="configure.html" class="xref page">configure</a> your Nuvolaris installation.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Finally, once you have the prerequisites satisfied and your installation configured ,  you can actually install:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>in your <a href="install-local.html" class="xref page">local machine</a></p>
-</li>
-<li>
-<p>in a <a href="install-server.html" class="xref page">Linux server</a></p>
-</li>
-<li>
-<p>in a <a href="install-cluster.html" class="xref page">Kubernetes cluster</a>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>After the installation, you can change the configuration then <a href="update.html" class="xref page">update the system</a>.</p>
-</div>
-<div class="paragraph">
-<p>If you have issues, please consult the <a href="faq.html" class="xref page">FAQ</a> and the <a href="debug.html" class="xref page">troubleshooting</a> page.</p>
-</div>
-<div class="paragraph">
-<p>You can also discuss with us in our <a href="http://nuvolaris.discourse.group">online forum</a>.</p>
 </div>
 </article>
   </div>

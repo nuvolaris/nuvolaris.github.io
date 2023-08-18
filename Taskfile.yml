@@ -50,7 +50,7 @@ tasks:
     - task: snap
       vars:
         CUR: 3.0.0
-    - npx antora --fetch --clean --attribute cur-ver="$(curl https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)" antora-playbook.yml
+    - npx antora --fetch --clean --attribute cur-ver="$(curl -s https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)" antora-playbook.yml
     sources:
     - 3.0.0/**/*.adoc
 
