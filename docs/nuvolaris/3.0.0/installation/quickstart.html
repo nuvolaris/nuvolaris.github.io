@@ -72,14 +72,14 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="prereq.html">🚧 Prerequisites</a>
+    <a class="nav-link" href="prereq.html">✅ Prerequisites</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="prereq-docker.html">❌ Local Docker</a>
+    <a class="nav-link" href="prereq-docker.html">✅ Local Docker</a>
   </li>
   <li class="nav-item" data-depth="3">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="prereq-server.html">❌ Linux Server</a>
+    <a class="nav-link" href="prereq-server.html">✅ Linux Server</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="4">
     <a class="nav-link" href="prereq-k3s.html">❌ K3S</a>
@@ -143,7 +143,7 @@
     <a class="nav-link" href="update.html">🚧 Update Installation</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="debug.html">✅ Troubleshooting ✅</a>
+    <a class="nav-link" href="debug.html">✅ Troubleshooting</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="faq.html">🚧 FAQ</a>
@@ -306,10 +306,20 @@
 <a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a> and then install Nuvolaris in it.</p>
 </div>
 <div class="paragraph">
-<p>Once you have:
-. installed the CLI a
-. configured you services
-. installed Docker Desktop</p>
+<p>Once you have:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>installed the CLI</p>
+</li>
+<li>
+<p>configured the services</p>
+</li>
+<li>
+<p>installed Docker Desktop</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>you can install Nuvolaris and its services in Docker with just:</p>
@@ -439,6 +449,9 @@
 <pre>nuv setup server &lt;server&gt; &lt;user&gt;</pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Now wait until the installation completes. Once it is installed, you can proceed to read the <a href="../tutorial/index.html" class="xref page">tutorial</a> to learn how to code with it.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -448,14 +461,28 @@
 <p>If you have access to a cloud provider, you can setup a Kubernetes cluster in it. The kubernetes cluster needs to satisfy certain <a href="#prereq-cluster">prerequisites</a> to be able to install Nuvolaris with no issues.</p>
 </div>
 <div class="paragraph">
-<p>We provide the following commands to easily configure and install a compliant Kubernetes clusters for the major cloud providers. At the end of the installation you will hava available and accessible a Kubernetes Cluster able to install Nuvolaris.</p>
+<p>We provide the support to easily configure and install a compliant Kubernetes clusters for the following clouds:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Amazon AWS:</p>
+<p><a href="#aws">Amazon AWS</a></p>
+</li>
+<li>
+<p><a href="#azure">Microsot Azure</a></p>
+</li>
+<li>
+<p><a href="#gcloud">Google Cloud</a></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>At the end of the installation you will have available and accessible a Kubernetes Cluster able to install Nuvolaris, so proceed with a <a href="#cluster">cluster installation</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="aws"><a class="anchor" href="#aws"></a>Amazon AWS</h3>
+<div class="paragraph">
+<p>Configure and install an Amazon EKS cluster on Amazon AWS with:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -463,12 +490,14 @@
 nuv cloud eks create</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Azure AKS:</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>then <a href="#cluster">install the cluster</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="azure"><a class="anchor" href="#azure"></a>Azure AKS:</h3>
+<div class="paragraph">
+<p>Configure and install an Azure AKS cluster on Microsoft Azure with:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -476,12 +505,14 @@ nuv cloud eks create</pre>
 nuv cloud aks create</pre>
 </div>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Google GKE:</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>then <a href="#cluster">install the cluster</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="gcloud"><a class="anchor" href="#gcloud"></a>Google Cloud</h3>
+<div class="paragraph">
+<p>Configure and install a Google Cloud GKE with:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -490,7 +521,8 @@ nuv cloud gke create</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Once this process is complete (note it can takes a long time), you should have a cluster ready to deploy nuvolaris in it as described in next paragraph.</p>
+<p>then <a href="#cluster">install the cluster</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -498,16 +530,19 @@ nuv cloud gke create</pre>
 <h2 id="cluster"><a class="anchor" href="#cluster"></a>Cluster Install</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you have access to a Kubernetes cluster with <code>cluster-admin</code> role, you can install Nuvolaris in it. You can get this access either provisioning a Kubernetes cluster in <a href="#cloud">cloud</a> or getting access to it from your system administrator.</p>
+<p>If you have access to a Kubernetes cluster with <code>cluster-admin</code> role, you can install Nuvolaris in it.</p>
 </div>
 <div class="paragraph">
-<p>Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file names <code>.kube/config</code> in your home directory.</p>
+<p>You can get this access either provisioning a Kubernetes cluster in <a href="#cloud">cloud</a> or getting access to it from your system administrator.</p>
+</div>
+<div class="paragraph">
+<p>Whatever is the way you get access to your kubernetes cluster, you will end up with a configuration file which is usually stored in a file named <code>.kube/config</code> in your home directory.</p>
 </div>
 <div class="paragraph">
 <p>If the cluster satifies the <a href="prereq-cluster.html" class="xref page">prerequisites</a>, you can install Nuvolaris in it.</p>
 </div>
 <div class="paragraph">
-<p>First, check you have actually access to a Kubernetes cluster, performing this command:</p>
+<p>To install, first, check you have actually access to a Kubernetes cluster, running this command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -515,7 +550,7 @@ nuv cloud gke create</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You should get something like this:</p>
+<p>You should get informations about your cluster, something like this:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -525,7 +560,7 @@ nuv cloud gke create</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Then type the command:</p>
+<p>If you have access to the cluster, you can install Nuvolaris with the command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -533,7 +568,10 @@ nuv cloud gke create</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Wait until the process is complete and if there are no errors, Nuvolaris is installed and ready to go.</p>
+<p>Now, wait until the process is complete and if there are no errors, Nuvolaris is installed and ready to go.</p>
+</div>
+<div class="paragraph">
+<p>Once it is installed, you can proceed to read the <a href="../tutorial/index.html" class="xref page">tutorial</a> to learn how to code with it.</p>
 </div>
 </div>
 </div>
