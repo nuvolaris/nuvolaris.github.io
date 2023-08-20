@@ -2,6 +2,7 @@ site:
   title: Nuvolaris Community
   url: https://nuvolaris.github.io
   start_page: nuvolaris::index.adoc
+
   keys:
     google_analytics: 'G-0WXXCQMZB6'
 
@@ -9,15 +10,16 @@ content:
   sources:
     - url: https://github.com/nuvolaris/nuvolaris-documentation
       branches: 3.0.0
+
     - url: https://github.com/nuvolaris/nuvolaris-documentation
       branches: 0.2.2
 
 ui: 
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    url: https://github.com/nuvolaris/nuvolaris-documentation-ui/releases/download/1.0.0/ui-bundle.zip
     snapshot: true
+
   output_dir: assets
-  supplemental_files: ./supplemental_ui
 
 output:
   clean: true

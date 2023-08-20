@@ -1,13 +1,16 @@
-[submodule "0.2.2"]
-	path = 0.2.2
-	url = git@github.com:nuvolaris/nuvolaris-documentation
-	branch = 0.2.2
-[submodule "3.0.0"]
-	path = 3.0.0
-	url = git@github.com:nuvolaris/nuvolaris-documentation
-[submodule "training"]
-	path = training
-	url = git@github.com:nuvolaris/nuvolaris-training
 [submodule "nuvolaris-documentation-ui"]
 	path = nuvolaris-documentation-ui
 	url = git@github.com:nuvolaris/nuvolaris-documentation-ui
+	branch = main
+[submodule "nuvolaris-training"]
+	path = nuvolaris-training
+	url = git@github.com:nuvolaris/nuvolaris-training
+	branch = main
+[submodule "nuvolaris-documentation/3.0.0"]
+	path = nuvolaris-documentation/3.0.0
+	url = git@github.com:nuvolaris/nuvolaris-documentation
+	branch = 3.0.0
+[submodule "nuvolaris-documentation/0.2.2"]
+	path = nuvolaris-documentation/0.2.2
+	url = git@github.com:nuvolaris/nuvolaris-documentation
+	branch = 0.2.2
