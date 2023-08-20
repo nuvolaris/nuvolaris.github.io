@@ -14,7 +14,6 @@
 # KIND, either express or implied.  See the License for the
 # specific language governing permissions and limitations
 # under the License.
-# flip
 
 version: '3'
 
@@ -24,17 +23,11 @@ vars:
 tasks:
   setup: {silent:true}
  
-  #publish:
-  #  - task: build
-  #  - git add docs
-  #  - git commit -m "$(date +%D-%T)" -a
-  #  - git push -f origin main:gh-pages
- 
   snap:
     ignore_error: true
     cmds:
     - |
-      cd "{{.CUR}}"
+      cd "nuvolaris-documentation/{{.CUR}}"
       git add *
       git commit -m "$(date +%D-%T)" -a
       git push origin "{{.CUR}}"
@@ -52,7 +45,7 @@ tasks:
         CUR: 3.0.0
     - npx antora --fetch --clean --attribute cur-ver="$(curl -s https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)" antora-playbook.yml
     sources:
-    - 3.0.0/**/*.adoc
+    - nuvolaris-documentation/3.0.0/**/*.adoc
 
   publish:
     desc: build the website on github
