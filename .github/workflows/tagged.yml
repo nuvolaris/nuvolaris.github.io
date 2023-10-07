@@ -38,7 +38,7 @@ jobs:
     - name: Generate Site
       run: |
            rm -Rf docs 
-           CUR_VER="$(curl https://raw.githubusercontent.com/nuvolaris/olaris/0.3.0/nuvroot.json | jq .version -r)"
+           CUR_VER="$(curl https://raw.githubusercontent.com/nuvolaris/olaris/3.0.0/nuvroot.json | jq .version -r)"
            echo CUR_VER=$CUR_VER
            npx antora --fetch --attribute cur-ver="$CUR_VER" --clean antora-playbook.yml
     - name: Upload artifact
