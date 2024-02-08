@@ -14,3 +14,7 @@
 	path = nuvolaris-documentation/0.2.2
 	url = git@github.com:nuvolaris/nuvolaris-documentation
 	branch = 0.2.2
+[submodule "nuvolaris-documentation/3.1.0"]
+	path = nuvolaris-documentation/3.1.0
+	url = https://github.com/nuvolaris/nuvolaris-documentation
+	branch = 3.1.0-mastrogpt
