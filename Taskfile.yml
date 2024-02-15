@@ -33,8 +33,10 @@ tasks:
       git push origin "{{.CUR}}"
 
   preview:
-  - task: build
-  - cd docs ; python3 -m http.server
+    desc: build the website
+    cmds:
+    - task: build
+    - cd docs ; python3 -m http.server
 
   build:
     desc: build the website
