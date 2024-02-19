@@ -1,14 +1,13 @@
-# Nuvolaris Community Documentation 
+# Nuvolaris Community Documentation
 
 Sources for [Nuvolaris Community Documentation](https://nuvolaris.github.io).
 
-
 ## How to edit documentation
 
-Setup 
+Setup
 
-1. git clone git@github.com:nuvolaris/nuvolaris.github.com --recurse-submodules
-2. cd nuvolaris.github.com/nuvolaris-documentat/3.1.0
+1. git clone git@github.com:nuvolaris/nuvolaris.github.io.git --recurse-submodules
+2. cd nuvolaris.github.com/nuvolaris-documentation/3.1.0
 3. git checkout origin/3.1.0 -B 3.1.0
 4. cd ../..
 
