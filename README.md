@@ -6,10 +6,11 @@ Sources for [Nuvolaris Community Documentation](https://nuvolaris.github.io).
 
 Setup
 
-1. git clone git@github.com:nuvolaris/nuvolaris.github.io.git --recurse-submodules
+1. git clone --recursive git@github.com:nuvolaris/nuvolaris.github.io.git
 2. cd nuvolaris.github.com/nuvolaris-documentation/3.1.0
-3. git checkout origin/3.1.0 -B 3.1.0
-4. cd ../..
+3. git pull
+4. git submodule update --remote
+5. git checkout origin/3.1.0 -B 3.1.0
 
 Now you edit nuvolaris-documentat/3.1.0/modules
 
