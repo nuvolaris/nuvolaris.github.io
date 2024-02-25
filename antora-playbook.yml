@@ -1,5 +1,5 @@
 site:
-  title: Nuvolaris Community
+  title: Nuvolaris Community and MastroGPT
   url: https://nuvolaris.github.io
   start_page: nuvolaris::index.adoc
 
