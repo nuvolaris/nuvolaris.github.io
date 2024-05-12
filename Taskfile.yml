@@ -18,7 +18,7 @@
 version: '3'
 
 vars: 
-  CUR: '3.0.0'
+  CUR: '3.1.0'
   
 tasks:
   setup: {silent:true}
@@ -62,4 +62,4 @@ tasks:
       CUR: 3.1.0
     env:
       TAG: 
-        sh: echo "v{{.CUR}}-beta.$(date +%y%m%d%H%M)"
+        sh: echo "v{{.CUR}}-mastrogpt.$(date +%y%m%d%H%M)"
