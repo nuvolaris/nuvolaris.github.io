@@ -77,7 +77,6 @@ h1, h2, h3, h4, h5 {
    - Invoke actions
    - Inspect logs 
 
-
 --- 
 ####  A tour of Nuvolaris
 
@@ -130,8 +129,8 @@ h1, h2, h3, h4, h5 {
 
 ---
 
-## IDE Integration and Started
-- Nuvolaris includes IDE  integration and startes
+## IDE Integration and Starters
+- Nuvolaris includes IDE  integration and starters
 
 ### Full Stack Hot Reload
 - Hot reload of back-end and front-end included
